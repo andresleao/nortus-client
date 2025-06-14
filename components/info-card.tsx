@@ -16,8 +16,9 @@ export default function InfoCard({
             <Image
                 src={src}
                 alt={alt}
-                width={24}
-                height={24}
+                width={0}
+                height={0}
+                style={{ width: '24px', height: 'auto' }}
                 priority
             />
             <div>

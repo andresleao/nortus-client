@@ -1,4 +1,4 @@
-import Separator from "../separator";
+import Separator from "../../separator";
 import ProfileInfoFeature from "./profile-info-feature";
 
 export default function ProfileSection() {

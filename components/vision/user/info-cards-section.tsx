@@ -1,5 +1,5 @@
 import InfoCard from "@/components/info-card";
-import Separator from "../separator";
+import Separator from "../../separator";
 
 export default function InfoCardsSection() {
     return (

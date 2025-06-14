@@ -1,5 +1,6 @@
-import ContentContainer from "../content-container";
-import Separator from "../separator";
+import ContentContainer from "@/components/content-container";
+import Separator from "@/components/separator";
+
 
 export default function CapturedPhrasesSection() {
     return (

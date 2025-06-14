@@ -1,7 +1,7 @@
 import clsx from "clsx"
 
 type IndicatorProps = {
-    color: string,
+    color?: string,
 }
 
 export default function Indicator({ color = "#22ABDD" }: IndicatorProps) {

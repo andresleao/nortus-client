@@ -1,6 +1,6 @@
 import Image from "next/image";
 import ProductDisplay from "./product-display";
-import Separator from "../separator";
+import Separator from "../../separator";
 
 export default function ProductsPriceDisplay() {
     return (
@@ -13,8 +13,9 @@ export default function ProductsPriceDisplay() {
                     <Image
                         src="/plus.svg"
                         alt="ícone do operador somar"
-                        width={16}
-                        height={16}
+                        height={0}
+                        width={0}
+                        style={{ width: '16px', height: 'auto' }}
                         priority
                     />
                 </div>
