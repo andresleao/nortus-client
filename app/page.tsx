@@ -1,5 +1,6 @@
+import ClassificationSection from '@/components/vision/classification/classification-section';
 import IaSugestionSection from '@/components/vision/ia-suggestion/ia-sugestion-section';
-import SimulationCard from '@/components/vision/simulation-card';
+import SimulationCardsSection from '@/components/vision/simulation-cards-section';
 import UserSection from '@/components/vision/user/user-section';
 
 export default function Home() {
@@ -7,20 +8,14 @@ export default function Home() {
     <div className="mt-[--header-height] pt-[47px] flex flex-col items-center w-full">
         <div className="flex items-start">
             <UserSection />
-            <IaSugestionSection/>
-            <div className="flex flex-col gap-y-[24px] ml-6">
-                <SimulationCard
-                    title="Seguro de vida individua"
-                    description="Proteção financeira completa com cobertura por morte e doenças graves"
-                    price="R$ 127,50/mês"
-                    backgroundColor="bg-[linear-gradient(to_bottom,_#2A97D4,_#3AB7D7)]"
-                />
-                <SimulationCard
-                    title="Upgrade do seguro residencial"
-                    description="Proteção financeira completa com cobertura por morte e doenças graves"
-                    price="R$ 127,50/mês"
-            />
+            <div className="flex flex-col ml-6">
+                <div className="flex gap-x-6 mb-[40px]">
+                    <IaSugestionSection/>
+                    <SimulationCardsSection />
+                </div>
+                <ClassificationSection />
             </div>
+
         </div>
     </div>
   );
