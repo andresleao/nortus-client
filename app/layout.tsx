@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import SideMenu from "@/components/side-menu";
-import Header from "@/components/header";
+import type { Metadata } from 'next';
+import './globals.css';
+import SideMenu from '@/components/side-menu';
+import Header from '@/components/header';
 
 export const metadata: Metadata = {
-  title: "Nortus Dashboard",
-  description: "Gráficos inteligentes.",
+  title: 'Nortus Dashboard',
+  description: 'Gráficos inteligentes.',
 };
 
 export default function RootLayout({
@@ -20,9 +20,7 @@ export default function RootLayout({
           <SideMenu />
           <div className="flex flex-col flex-1">
             <Header />
-            <main className="flex-1 overflow-y-auto">
-              {children}
-            </main>
+            <main className="flex-1 overflow-y-auto">{children}</main>
           </div>
         </div>
       </body>
