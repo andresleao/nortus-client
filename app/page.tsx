@@ -1,7 +1,10 @@
 import CustomContainer from '@/components/custom-container';
 import InfoCard from '@/components/info-card';
 import Separator from '@/components/separator';
-import ActionsDisplay from '@/components/vision/actions-display';
+import InfoCardsSection from '@/components/vision/info-cards-section';
+import ActionsSection from '@/components/vision/actions-section';
+import CapturedPhrasesSection from '@/components/vision/captured-phrases-section';
+import ProductDisplay from '@/components/vision/product-display';
 import ProductsPriceDisplay from '@/components/vision/products-price-display';
 import ProfileSection from '@/components/vision/profile-section';
 
@@ -11,7 +14,6 @@ export default function Home() {
       <div className="flex">
         <CustomContainer
           width={'w-[365px]'}
-          height={'h-[952px]'}
           paddginVertical="py-[20px]"
         >
           <div className="mt-[34px]">
@@ -19,11 +21,11 @@ export default function Home() {
               Ricardo Leite
             </span>
           </div>
-          <ActionsDisplay />
-          <Separator marginVertical={"my-6"} />
+          <InfoCardsSection />
           <ProductsPriceDisplay />
-          <Separator marginVertical={"my-4"} />
           <ProfileSection />
+          <CapturedPhrasesSection />
+          <ActionsSection />
         </CustomContainer>
       </div>
     </div>

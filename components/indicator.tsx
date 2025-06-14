@@ -4,13 +4,14 @@ type IndicatorProps = {
     color: string,
 }
 
-export default function Indicator({
-    color = "#22ABDD"
-}: IndicatorProps) {
+export default function Indicator({ color = "#22ABDD" }: IndicatorProps) {
     return (
-        <div className={clsx(
-            "w-[8px] h-[8px] rounded-full",
-            `bg-[${color}] shadow-[0_0_4px_2px_${color}]`
-        )} />
+      <div
+        className="w-[8px] h-[8px] rounded-full"
+        style={{
+          backgroundColor: color,
+          boxShadow: `0 0 4px 2px ${color}`,
+        }}
+      />
     );
-}
+  }
