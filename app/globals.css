@@ -16,6 +16,7 @@ body {
 
 :root {
   --side-menu-width: 150px;
+  --header-height: 88px;
 }
 
 body > nextjs-portal,

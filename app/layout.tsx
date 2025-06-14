@@ -18,8 +18,12 @@ export default function RootLayout({
       <body className="h-screen overflow-hidden">
         <div className="flex h-full">
           <SideMenu />
-          <Header />
-          <main className="flex-1 overflow-y-auto">{children}</main>
+          <div className="flex flex-col flex-1">
+            <Header />
+            <main className="flex-1 overflow-y-auto">
+              {children}
+            </main>
+          </div>
         </div>
       </body>
     </html>
