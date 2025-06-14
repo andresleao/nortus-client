@@ -9,6 +9,7 @@ export default function IaSugestionSection() {
     return (
         <CustomContainer
             width="w-[629px]"
+            height="h-[538px]"
             margin="ml-[20px]"
             padding="px-6 pb-[32px]"
         >
