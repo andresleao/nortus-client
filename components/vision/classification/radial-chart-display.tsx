@@ -2,7 +2,7 @@ import RadialChart from "@/components/charts/radial-chart";
 
 export default function RadialChartDisplay() {
     return (
-        <div className="bg-white/5 rounded-[16px] w-[332px] h-[216px] flex flex-col justify-between pb-[16px] mt-6">
+        <div className="bg-white/5 rounded-[16px] flex flex-col pb-[16px] w-[332px] h-[216px]">
             <div className="flex justify-center pt-6">
                 <RadialChart />
             </div>
@@ -12,7 +12,7 @@ export default function RadialChartDisplay() {
                     Premium
                 </span>
             </div>
-            <div className="flex justify-between px-6 mt-[30px]">
+            <div className="flex justify-between mt-[30px] px-4">
                 <div className="flex flex-col gap-y-[8px]">
                     <span className="text-white/50 text-[10px] font-semibold leading-[16px]">
                         Life time value

@@ -3,11 +3,10 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 
-// ApexCharts deve ser carregado de forma dinâmica no Next.js
 const ApexChart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
 export default function RadialChart() {
-  const series = [11]; // Valor percentual (ex: 11%)
+  const series = [11];
 
   const options: ApexCharts.ApexOptions = {
     chart: {
