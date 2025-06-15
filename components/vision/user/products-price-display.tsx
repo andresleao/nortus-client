@@ -1,8 +1,13 @@
 import Image from "next/image";
 import ProductDisplay from "./product-display";
 import Separator from "../../separator";
+import { Product } from "@/api/types/product";
 
-export default function ProductsPriceDisplay() {
+type ProductsPriceDisplayProps = {
+    products: Product[];
+}
+
+export default function ProductsPriceDisplay({ products }: ProductsPriceDisplayProps) {
     return (
         <>
             <div className="flex flex-col w-full px-6">
@@ -19,9 +24,7 @@ export default function ProductsPriceDisplay() {
                         priority
                     />
                 </div>
-                <ProductDisplay />
-                <ProductDisplay />
-                <ProductDisplay />
+                {products.map(p => <ProductDisplay key={p.name} product={p} />)}
             </div>
             <Separator marginVertical={"mt-4 mb-6"} />
         </>
