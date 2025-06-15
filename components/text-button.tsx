@@ -1,19 +1,27 @@
 import clsx from "clsx";
 
 type TextButtonProps = {
-    label: string
-    margin?: string
+    label: string;
+    margin?: string;
+    backgroundColor?: string;
 }
 
-export default function TextButton({ label, margin }: TextButtonProps ) {
+export default function TextButton({
+    label,
+    margin,
+    backgroundColor
+}: TextButtonProps ) {
     return (
-       <button
+        <button
             className={clsx(
                 margin,
-                "rounded-full bg-[#1876D2] p-[12px] cursor-pointer",
+                "rounded-full p-[12px] cursor-pointer",
                 "flex items-center justify-center w-fit",
-                "[filter:drop-shadow(0_0_10px_#1876D2)]"
             )}
+            style={{
+                backgroundColor: backgroundColor ?? "#F6F8FC1A",
+                filter: `drop-shadow(0 0 10px ${backgroundColor ?? null})`,
+              }}
         >
             <span className="font-semibold text-[12px] leading-[16px]">
                 {label}

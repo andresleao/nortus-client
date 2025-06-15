@@ -5,7 +5,7 @@ export default function OptionsSelector() {
         <div className="flex items-center justify-center gap-x-[24px] py-[6px] px-[12px] rounded-full bg-white/5">
             <TextButton label="NBX" />
             <TextButton label="NBA"/>
-            <TextButton label="NBO" />
+            <TextButton label="NBO" backgroundColor="#1876D2" />
         </div>
     );
 }
