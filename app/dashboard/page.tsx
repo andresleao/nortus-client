@@ -1,5 +1,6 @@
 import DonutChart from "@/components/charts/donut-chart";
 import ActiveOffersSection from "@/components/dashboard/active-offers-section";
+import ActiveWorkflowsSection from "@/components/dashboard/active-workflows-section";
 import DonutChartSection from "@/components/dashboard/donut-chart-section";
 import IndicatorCard from "@/components/dashboard/indicator-card";
 import KpiSection from "@/components/dashboard/kpi-section";
@@ -21,7 +22,8 @@ export default function Dashboard() {
                         <IndicatorCard name="Retenção" />
                         <IndicatorCard name="Taxa de Churn" />
                    </div>
-                  <DonutChartSection />
+                    <DonutChartSection />
+                    <ActiveWorkflowsSection />
                 </div>
             </div>
         </div>
