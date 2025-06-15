@@ -1,6 +1,11 @@
+import { Action } from "@/api/types/actions";
 import ActionDisplay from "./action-display";
 
-export default function ActionsSection() {
+type ActionsSectionProps = {
+    actions: Action[];
+}
+
+export default function ActionsSection({ actions }: ActionsSectionProps) {
     return (
         <div className="flex flex-col w-full px-6">
             <div className="mb-6">
@@ -9,8 +14,7 @@ export default function ActionsSection() {
                 </span>
             </div>
             <div className="flex flex-col gap-y-4">
-                <ActionDisplay />
-                <ActionDisplay />
+                {actions.map((a, i) => <ActionDisplay key={i} action={a} />)}
             </div>
         </div>
     );
