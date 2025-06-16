@@ -1,7 +1,11 @@
 import Separator from "../../separator";
 import ProfileInfoFeature from "./profile-info-feature";
 
-export default function ProfileSection() {
+type ProfileInfoFeatureProps = {
+    profiles: string[];
+}
+
+export default function ProfileSection({ profiles }: ProfileInfoFeatureProps) {
     return (
         <>
             <div className="flex flex-col px-6">
@@ -9,9 +13,7 @@ export default function ProfileSection() {
                     Perfil
                 </span>
                 <div className="flex flex-wrap gap-4 mt-[24px]">
-                    <ProfileInfoFeature title="Família com filhos" />
-                    <ProfileInfoFeature title="Profissional liberal" />
-                    <ProfileInfoFeature title="Investidor" />
+                    {profiles.map((p, i) => <ProfileInfoFeature key={i} title={p} />)}
                 </div>
             </div>
             <Separator marginVertical={"my-6"} />

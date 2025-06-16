@@ -1,8 +1,11 @@
 import ContentContainer from "@/components/content-container";
 import Separator from "@/components/separator";
 
+type CapturedPhrasesSectionProps = {
+    phrases: string[];
+}
 
-export default function CapturedPhrasesSection() {
+export default function CapturedPhrasesSection({ phrases }: CapturedPhrasesSectionProps) {
     return (
         <>
             <div className="flex flex-col w-full px-6">
@@ -12,8 +15,7 @@ export default function CapturedPhrasesSection() {
                     </span>
                 </div>
                 <div className="flex flex-col gap-y-4">
-                    <ContentContainer />
-                    <ContentContainer />
+                   {phrases.map((p, i) =>  <ContentContainer key={i} phrase={p} />)}
                 </div>
             </div>
             <Separator marginVertical={"my-6"} />

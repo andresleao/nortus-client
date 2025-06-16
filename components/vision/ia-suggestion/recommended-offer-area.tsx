@@ -1,4 +1,10 @@
-export default function RecommendedOfferArea() {
+import { IARecommendation } from "@/api/types/ia-recommendation";
+
+type RecommendedOfferAreaProps = {
+    recommendedOffer: IARecommendation
+}
+
+export default function RecommendedOfferArea({ recommendedOffer }: RecommendedOfferAreaProps) {
     return (
         <>
             <div className="px-6 pt-6">
@@ -6,7 +12,7 @@ export default function RecommendedOfferArea() {
                     Oferta recomendada
                 </span>
                 <p className="font-normal text-[14px] leading-[16px] mt-[8px] mb-[24px]">
-                    Seguro de vida individual com cobertura por doenças graves
+                    {recommendedOffer.plan}
                 </p>
             </div>
             <div>
@@ -16,7 +22,7 @@ export default function RecommendedOfferArea() {
                             Valor recomendado
                         </span>
                         <span className="font-semibold text-[20px] leading-[16px]">
-                            R$ 127,50/mês
+                            {`R$ ${recommendedOffer.value}/mês`}
                         </span>
                     </div>
                     <div className="flex flex-col gap-y-[8px]">
@@ -24,7 +30,7 @@ export default function RecommendedOfferArea() {
                             Probabilidade de conversão
                         </span>
                         <span className="font-semibold text-[20px] leading-[16px] text-[#00DC04]">
-                            78%
+                            {`${recommendedOffer.conversionProbability}%`}
                         </span>
                     </div>
                 </div>
