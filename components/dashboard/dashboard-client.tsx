@@ -32,7 +32,6 @@ export default function DashboardClient() {
 
             if (segmentsData) {
                 dispatch(setSegments(segmentsData));
-                console.log(segmentsData);
             }
 
             setIsLoading(false);
