@@ -1,6 +1,6 @@
 'use client';
 
-import { getKpis } from "@/api/api";
+import { getKpis, getOffers } from "@/api/api";
 import ActiveOffersSection from "@/components/dashboard/active-offers-section";
 import ActiveWorkflowsSection from "@/components/dashboard/active-workflows-section";
 import DonutChartSection from "@/components/dashboard/donut-chart-section";
@@ -9,7 +9,7 @@ import KpiSection from "@/components/dashboard/kpi-section";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { AppSpinner } from "../app-spinner";
-import { setKpis, setSelectedKpis } from "../provider/slices/dashboard-page-slice";
+import { setKpis, setOffers, setSelectedKpis } from "../provider/slices/dashboard-page-slice";
 
 export default function DashboardClient() {
     const dispatch = useDispatch();
@@ -18,13 +18,19 @@ export default function DashboardClient() {
     useEffect(() => {
         const fetchData = async () => {
             setIsLoading(true);
-            const data = await getKpis();
 
-            if (data) {
-                dispatch(setKpis(data));
-                dispatch(setSelectedKpis(data.arpuTrend))
-                console.log(data);
+            const kpisData = await getKpis();
+            const offersData = await getOffers();
+
+            if (kpisData) {
+                dispatch(setKpis(kpisData));
+                dispatch(setSelectedKpis(kpisData.arpuTrend))
             }
+
+            if (offersData) {
+                dispatch(setOffers(offersData));
+            }
+
             setIsLoading(false);
 
         };
