@@ -1,4 +1,5 @@
 export const paths = {
-    home: () => '/',
-    dashboard: () => '/dashboard',
+    home: () => "/",
+    dashboard: () => "/dashboard",
+    chat: () => "/chat"
 };

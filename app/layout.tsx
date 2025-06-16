@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import SideMenu from '@/components/side-menu';
-import Header from '@/components/header';
+
 import { Montserrat } from 'next/font/google';
 import { ReduxProvider } from '@/components/provider/redux-provider';
+import SideMenu from '@/components/layout/side-menu';
+import Header from '@/components/layout/header';
 
 export const metadata: Metadata = {
   title: 'Nortus Dashboard',

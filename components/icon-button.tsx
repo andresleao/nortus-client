@@ -3,14 +3,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 type IconButtonProps = {
-  src: string;
-  alt: string;
-  href?: string;
-  isActive?: boolean;
-  backgroundColor?: string;
-  radius?: string;
-  size?: string;
-  iconSize?: number;
+    src: string;
+    alt: string;
+    href?: string;
+    isActive?: boolean;
+    backgroundColor?: string;
+    radius?: string;
+    size?: string;
+    iconSize?: number;
 };
 
 export default function IconButton({
@@ -37,10 +37,16 @@ export default function IconButton({
     if (!href) {
         return (
             <div
-            className={buttonClasses}
-            style={ backgroundColor ? { backgroundColor } : undefined }
+                className={buttonClasses}
+                style={ backgroundColor ? { backgroundColor } : undefined }
             >
-            <Image src={src} alt={alt} width={iconSize} height={iconSize} priority />
+                <Image
+                    src={src}
+                    alt={alt}
+                    width={iconSize}
+                    height={iconSize}
+                    priority
+                />
             </div>
         );
     }
