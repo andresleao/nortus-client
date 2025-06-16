@@ -10,40 +10,51 @@ import { useDispatch } from 'react-redux';
 import { getClient, login } from '@/api/api';
 import { setUser } from '@/components/provider/slices/auth-slice';
 import { setClient } from '../provider/slices/vision-page-slice';
+import Cookies from 'js-cookie';
 
 export default function HomeClient() {
-  const dispatch = useDispatch();
-  const [isLoading, setIsLoading] = useState(false);
+    const dispatch = useDispatch();
+    const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
+    useEffect(() => {
+        const fetchData = async () => {
+            setIsLoading(true);
 
-      const data = await login();
-      const client = await getClient();
+            localStorage.removeItem('user');
 
-      setIsLoading(false);
+            const data = await login();
+            const client = await getClient();
 
-      dispatch(setUser(data.user));
-      dispatch(setClient(client));
-    };
-    fetchData();
-  }, [dispatch]);
+            Cookies.set('token', data.token, {
+                expires: 7,
+                secure: true,
+                sameSite: 'strict',
+            });
 
-  if (isLoading) {
-    return <AppSpinner fullScreen />
-  }
+            localStorage.setItem('user', JSON.stringify(data.user));
 
-  return (
-    <div className="mt-[--header-height] pt-[47px] flex justify-center w-full mb-[40px]">
-      <UserSection />
-      <div className="flex flex-col ml-6">
-        <div className="flex gap-x-6 mb-[40px]">
-          <IaSugestionSection />
-          <SimulationCardsSection />
+            setIsLoading(false);
+
+            dispatch(setUser(data.user));
+            dispatch(setClient(client));
+        };
+        fetchData();
+    }, [dispatch]);
+
+    if (isLoading) {
+        return <AppSpinner fullScreen />
+    }
+
+    return (
+        <div className="mt-[--header-height] pt-[47px] flex justify-center w-full mb-[40px]">
+            <UserSection />
+            <div className="flex flex-col ml-6">
+                <div className="flex gap-x-6 mb-[40px]">
+                    <IaSugestionSection />
+                    <SimulationCardsSection />
+                </div>
+                <ClassificationSection />
+            </div>
         </div>
-        <ClassificationSection />
-      </div>
-    </div>
-  );
+    );
 }
