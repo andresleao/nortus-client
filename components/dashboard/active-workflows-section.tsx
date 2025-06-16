@@ -9,8 +9,16 @@ export default function ActiveWorkflowsSection() {
                 Workflows inteligentes Ativos
             </span>
             <div className="mt-[32px] flex flex-col gap-[32px] mb-[40px]">
-                <WorkflowsCard />
-                <WorkflowsCard />
+                <WorkflowsCard
+                    title="Jornada Novo Cliente"
+                    conversionValue={35}
+                    roiValue={325}
+                />
+                <WorkflowsCard
+                    title="Assinatura de Plano"
+                    conversionValue={18}
+                    roiValue={120}
+                />
             </div>
             <div className="flex justify-end">
                 <TextButton

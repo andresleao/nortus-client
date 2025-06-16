@@ -4,11 +4,16 @@ import React from "react";
 
 const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
-const SmoothCurveChart = () => {
+type SmoothCurveChartPros = {
+  values: number[];
+  monthsLabels: string[]
+};
+
+const SmoothCurveChart = ({ values, monthsLabels }: SmoothCurveChartPros) => {
   const series = [
     {
       name: "Receita",
-      data: [80, 95, 130, 190, 160, 140, 120, 150, 200, 250, 310, 290],
+      data: [...values],
     },
   ];
 
@@ -55,10 +60,7 @@ const SmoothCurveChart = () => {
       },
     },
     xaxis: {
-      categories: [
-        "Jan", "Fev", "Mar", "Abr", "Mai", "Jun",
-        "Jul", "Ago", "Set", "Out", "Nov", "Dez",
-      ],
+      categories: monthsLabels,
       axisBorder: { show: false },
       axisTicks: { show: false },
       labels: {
@@ -66,8 +68,8 @@ const SmoothCurveChart = () => {
       },
     },
     yaxis: {
-      min: 0,
-      max: 380,
+      min: values[0],
+      max: values[values.length -1],
       tickAmount: 4,
       labels: {
         style: { colors: "#FFF", fontSize: "14px" },

@@ -1,8 +1,14 @@
 import CustomContainer from "@/components/custom-container";
 import IconButton from "../icon-button";
 import OffersTable from "./offers-table";
+import { useSelector } from "react-redux";
+import { RootState } from "../provider/store";
 
 export default function ActiveOffersSection() {
+    const offers = useSelector((state: RootState) => state.dashboard.offers);
+
+    if (!offers) return null;
+
     return (
         <CustomContainer width="w-[852px]" margin="mt-[40px]">
             <div className="flex justify-between px-6 pt-[40px] mb-[32px]">
@@ -18,7 +24,7 @@ export default function ActiveOffersSection() {
                     iconSize={16}
                 />
             </div>
-            <OffersTable />
+            <OffersTable offers={offers} />
         </CustomContainer>
     );
 }

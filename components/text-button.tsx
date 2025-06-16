@@ -5,21 +5,27 @@ type TextButtonProps = {
     margin?: string;
     backgroundColor?: string;
     borderColor?: string;
+    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+    isActive?: boolean;
 }
 
 export default function TextButton({
     label,
     margin,
     backgroundColor,
-    borderColor
+    borderColor,
+    onClick,
+    isActive = true,
 }: TextButtonProps ) {
     return (
         <button
+            onClick={onClick}
             className={clsx(
                 margin,
                 borderColor && `border border-[${borderColor}]`,
-                "rounded-full p-[12px] cursor-pointer",
+                "rounded-full p-[12px]",
                 "flex items-center justify-center w-fit",
+                isActive ? "cursor-pointer" : "opacity-40 cursor-default"
             )}
             style={{
                 ...(backgroundColor && {
