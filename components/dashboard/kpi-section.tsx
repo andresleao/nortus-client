@@ -1,8 +1,15 @@
 import SmoothCurveChart from "../charts/smooth-curve-chart";
 import CustomContainer from "../custom-container";
 import KpiSelection from "./kpi-selection";
+import { RootState } from "../provider/store";
+import { useSelector } from "react-redux";
 
 export default function KpiSection() {
+    const kpis = useSelector((state: RootState) => state.dashboard.kpis);
+    const selectedKpis = useSelector((state: RootState) => state.dashboard.selectedKpis);
+
+    if (!kpis || !selectedKpis) return null;
+
     return (
         <CustomContainer width="w-[852px] h-[376px]">
             <div className="flex justify-between items-center p-6">
@@ -11,7 +18,10 @@ export default function KpiSection() {
                 </span>
                 <KpiSelection />
             </div>
-            <SmoothCurveChart />
+            <SmoothCurveChart
+                values={selectedKpis}
+                monthsLabels={kpis.labels}
+            />
         </CustomContainer>
     );
 }

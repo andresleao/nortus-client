@@ -32,15 +32,23 @@ export default function WorkflowsCard() {
                     <Image
                         src="/blue_graphic.svg"
                         alt="ícone de gráfico"
-                        width={24}
-                        height={24}
+                        width={0}
+                        height={0}
+                        style={{
+                            width: '24px',
+                            height: '24px'
+                        }}
                         priority
                     />
                     <Image
                         src="/copy.svg"
                         alt="ícone de papéis sobrepostos"
-                        width={24}
-                        height={24}
+                        width={0}
+                        height={0}
+                        style={{
+                            width: '24px',
+                            height: '24px'
+                        }}
                         priority
                     />
                 </div>

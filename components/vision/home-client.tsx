@@ -21,7 +21,6 @@ export default function HomeClient() {
 
       const data = await login();
       const client = await getClient();
-      console.log(client);
 
       setIsLoading(false);
 
