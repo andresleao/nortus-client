@@ -15,8 +15,8 @@ export default function ClassificationSection() {
             <div className="flex mt-6 gap-x-6">
                 <RadialChartDisplay />
                 <div className="flex flex-1 flex-col gap-y-6">
-                    <ExpansionScoreBar label="Score de expansão" />
-                    <ExpansionScoreBar label="Score de retenção" />
+                    <ExpansionScoreBar label="Score de expansão" scorePercentual={95} />
+                    <ExpansionScoreBar label="Score de retenção" scorePercentual={50} />
                 </div>
             </div>
         </CustomContainer>

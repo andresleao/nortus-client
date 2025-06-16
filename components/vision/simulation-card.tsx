@@ -5,14 +5,18 @@ type SimulationCardProps = {
     title: string,
     description: string,
     price: string,
-    backgroundColor?: string
+    backgroundColor?: string,
+    buttonBgColor?: string,
+    buttonBorderColor?: string
 }
 
 export default function SimulationCard({
     title,
     description,
     price,
-    backgroundColor = "bg-white/5"
+    backgroundColor = "bg-white/5",
+    buttonBgColor,
+    buttonBorderColor,
 }: SimulationCardProps) {
     return (
        <CustomContainer
@@ -39,7 +43,11 @@ export default function SimulationCard({
                             {price}
                         </span>
                     </div>
-                    <TextButton label="Simular" />
+                    <TextButton
+                        label="Simular"
+                        backgroundColor={buttonBgColor}
+                        borderColor={buttonBorderColor}
+                    />
                 </div>
             </div>
        </CustomContainer>

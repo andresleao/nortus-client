@@ -4,28 +4,33 @@ type TextButtonProps = {
     label: string;
     margin?: string;
     backgroundColor?: string;
+    borderColor?: string;
 }
 
 export default function TextButton({
     label,
     margin,
-    backgroundColor
+    backgroundColor,
+    borderColor
 }: TextButtonProps ) {
     return (
         <button
             className={clsx(
                 margin,
+                borderColor && `border border-[${borderColor}]`,
                 "rounded-full p-[12px] cursor-pointer",
                 "flex items-center justify-center w-fit",
             )}
             style={{
-                backgroundColor: backgroundColor ?? "#F6F8FC1A",
-                filter: `drop-shadow(0 0 10px ${backgroundColor ?? null})`,
-              }}
+                ...(backgroundColor && {
+                  backgroundColor: backgroundColor,
+                  filter: `drop-shadow(0 0 10px ${backgroundColor})`,
+                }),
+            }}
         >
-            <span className="font-semibold text-[12px] leading-[16px]">
-                {label}
-            </span>
+                <span className="font-semibold text-[12px] leading-[16px]">
+                    {label}
+                </span>
         </button>
     );
 }
