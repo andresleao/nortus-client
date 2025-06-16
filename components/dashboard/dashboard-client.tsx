@@ -1,15 +1,13 @@
 'use client';
 
-import { getKpis, getOffers } from "@/api/api";
+import { getKpis, getOffers, getSegments } from "@/api/api";
 import ActiveOffersSection from "@/components/dashboard/active-offers-section";
-import ActiveWorkflowsSection from "@/components/dashboard/active-workflows-section";
-import DonutChartSection from "@/components/dashboard/donut-chart-section";
-import IndicatorCard from "@/components/dashboard/indicator-card";
 import KpiSection from "@/components/dashboard/kpi-section";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { AppSpinner } from "../app-spinner";
-import { setKpis, setOffers, setSelectedKpis } from "../provider/slices/dashboard-page-slice";
+import { setKpis, setOffers, setSegments, setSelectedKpis } from "../provider/slices/dashboard-page-slice";
+import IndicatorsSection from "./indicators-section";
 
 export default function DashboardClient() {
     const dispatch = useDispatch();
@@ -21,14 +19,20 @@ export default function DashboardClient() {
 
             const kpisData = await getKpis();
             const offersData = await getOffers();
+            const segmentsData = await getSegments();
 
             if (kpisData) {
                 dispatch(setKpis(kpisData));
-                dispatch(setSelectedKpis(kpisData.arpuTrend))
+                dispatch(setSelectedKpis(kpisData.arpuTrend));
             }
 
             if (offersData) {
                 dispatch(setOffers(offersData));
+            }
+
+            if (segmentsData) {
+                dispatch(setSegments(segmentsData));
+                console.log(segmentsData);
             }
 
             setIsLoading(false);
@@ -48,18 +52,7 @@ export default function DashboardClient() {
                     <KpiSection />
                     <ActiveOffersSection />
                 </div>
-                <div className="flex flex-col gap-6 ml-[40px]">
-                   <div className="flex gap-6">
-                        <IndicatorCard name="ARPU" />
-                        <IndicatorCard name="Conversão IA" />
-                   </div>
-                   <div className="flex gap-6">
-                        <IndicatorCard name="Retenção" />
-                        <IndicatorCard name="Taxa de Churn" />
-                   </div>
-                    <DonutChartSection />
-                    <ActiveWorkflowsSection />
-                </div>
+                <IndicatorsSection />
             </div>
         </div>
     );

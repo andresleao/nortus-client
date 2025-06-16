@@ -18,7 +18,7 @@ export default function OffersTable({ offers }: OffersTableProps) {
                 </thead>
                 <tbody className="divide-y divide-[#3A3F54]">
                     {offers.map((o, i) => (
-                        <tr>
+                        <tr key={i}>
                             <td className="py-4 px-6 font-semibold text-[14px] leading-[16px]">{o.name}</td>
                             <td className="py-4 px-6 font-semibold text-[14px] leading-[16px]">{`${o.conversion}%`}</td>
                             <td className="py-4 px-6 font-semibold text-[14px] leading-[16px]">{`R$ ${o.revenue.toFixed(1)}k`}</td>

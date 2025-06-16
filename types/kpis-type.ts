@@ -1,0 +1,1 @@
+export type KpisType = "arpu" | "churn" | "conversion" | "retention";
