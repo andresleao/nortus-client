@@ -14,7 +14,7 @@ export default function UserSection() {
 
     return (
         <CustomContainer
-            width={'w-[365px]'}
+            width={"min-w-[365px] max-w-[365px]"}
             margin="mr-[20px]"
             padding="py-[20px]"
         >

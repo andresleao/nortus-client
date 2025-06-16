@@ -12,38 +12,40 @@ import { setUser } from '@/components/provider/slices/auth-slice';
 import { setClient } from '../provider/slices/vision-page-slice';
 
 export default function HomeClient() {
-  const dispatch = useDispatch();
-  const [isLoading, setIsLoading] = useState(false);
+    const dispatch = useDispatch();
+    const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
+    useEffect(() => {
+        const fetchData = async () => {
+            setIsLoading(true);
 
-      const data = await login();
-      const client = await getClient();
+            const data = await login();
+            const client = await getClient();
 
-      setIsLoading(false);
+            setIsLoading(false);
 
-      dispatch(setUser(data.user));
-      dispatch(setClient(client));
-    };
-    fetchData();
-  }, [dispatch]);
+            dispatch(setUser(data.user));
+            dispatch(setClient(client));
+        };
+        fetchData();
+    }, [dispatch]);
 
-  if (isLoading) {
-    return <AppSpinner fullScreen />
-  }
+    if (isLoading) {
+        return <AppSpinner fullScreen />
+    }
 
-  return (
-    <div className="mt-[--header-height] pt-[47px] flex justify-center w-full mb-[40px]">
-      <UserSection />
-      <div className="flex flex-col ml-6">
-        <div className="flex gap-x-6 mb-[40px]">
-          <IaSugestionSection />
-          <SimulationCardsSection />
+    return (
+        <div className="mt-[--header-height] pt-[47px] mb-[40px] w-full 2lx:ml-0">
+            <div className="flex flex-col lg:flex-row">
+                <UserSection />
+                <div className="flex flex-col lg:ml-6 w-full">
+                    <div className="flex flex-col 2xl:flex-row gap-x-6 mb-[40px] items-center">
+                        <IaSugestionSection />
+                        <SimulationCardsSection />
+                    </div>
+                    <ClassificationSection />
+                </div>
+            </div>
         </div>
-        <ClassificationSection />
-      </div>
-    </div>
-  );
+    );
 }

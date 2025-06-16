@@ -2,7 +2,7 @@ import SimulationCard from "./simulation-card";
 
 export default function SimulationCardsSection() {
     return (
-        <div className="flex flex-col gap-y-6">
+        <div className="flex flex-row 2xl:flex-col gap-6 mt-6 2xl:mt-0">
             <SimulationCard
                 title="Seguro de vida individua"
                 description="Proteção financeira completa com cobertura por morte e doenças graves"
