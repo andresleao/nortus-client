@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Nortus-Client
 
-## Getting Started
-
-First, run the development server:
+Rodar a partir da branch develop:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Ferramentas - Libs
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Axios - Consumo de api
+- Apexcharts - Desenvolvimento de Gráficos
+- Redux - Gerenciamento de estado
+- Clsx - Injeção de classes dinânimas - CSS
+- Prettier
+- React Spinners
+- Js Cookie
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Exemplos de Prompts para desenvolvimento de Gráficos - Charts
 
-## Learn More
+```
+Como desenvolvedor frontend em uma aplicação NextJs que utiliza Typescript, crie um gráfico do tipo donut com exibição de 5 labels utilizando a lib Apexcharts.
+```
 
-To learn more about Next.js, take a look at the following resources:
+```
+Como desenvolvedor frontend em uma aplicação NextJs que utiliza Typescript, crie um gráfico do tipo score bar no sentido horizontal utilizando a lib Apexcharts.
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Referência em: [Apexcharts.com](https://apexcharts.com/react-chart-demos/area-charts/)
