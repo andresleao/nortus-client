@@ -14,9 +14,9 @@ export default function IaSugestionSection() {
 
     return (
         <CustomContainer
-            width="w-[629px]"
-            height="h-[536px]"
-            padding="px-6 pb-[32px]"
+            width="w-full sm:w-[500px] md:w-[629px]"
+            height="h-auto md:h-[536px]"
+            padding="px-4 md:px-6 pb-[32px]"
         >
             <div className="flex items-center justify-between mb-[12px] mt-6">
                 <span className="font-bold text-2xl leading-[16px]">

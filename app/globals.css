@@ -24,3 +24,23 @@ body > nextjs-portal,
 [data-nextjs-toast] {
   display: none !important;
 }
+
+@media (min-width: 1700px) {
+  .xxl-row {
+    flex-direction: row !important;
+  }
+
+  .xxl-col {
+    flex-direction: column !important;
+  }
+}
+
+@media (max-width: 1699.98px) {
+  .xxl-mt {
+    margin-top: 24px !important;
+  }
+
+  .classification-xxl-w {
+    width: 700px !important;
+  }
+}

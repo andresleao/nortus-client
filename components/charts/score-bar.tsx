@@ -69,7 +69,7 @@ export default function ExpansionScoreBar({ label, scorePercentual }: ScoreBarPr
     };
 
     return (
-        <div className="bg-white/5 rounded-[16px] w-full p-4 h-[96px] flex flex-col justify-center">
+        <div className="bg-white/5 rounded-[16px] p-4 min-h-[96px] flex flex-col justify-center w-full flex-1" >
             <div className="flex items-center gap-x-[16px] mb-[16px]">
                 <span className="font-normal text-[14px] leading-[16px]">
                     {label}
@@ -103,4 +103,3 @@ export default function ExpansionScoreBar({ label, scorePercentual }: ScoreBarPr
         </div>
     );
 }
-
