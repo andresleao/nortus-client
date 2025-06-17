@@ -25,12 +25,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         <SideMenu />
                         <div className="flex-1 flex flex-col overflow-hidden">
                             <Header />
-                            <main className="flex-1 overflow-y-auto overflow-x-hidden flex justify-center">
+                            <main className="flex-1 overflow-y-auto overflow-x-hidden flex">
                                 <div
-                                    className="w-full max-w-[1370px]"
+                                    className="w-full max-w-[1270px]"
                                     style={{
                                         width: 'calc(100vw - var(--side-menu-width))',
                                         marginLeft: 'calc(var(--side-menu-width))',
+                                        margin: '0 auto',
                                     }}
                                 >
                                     {children}
