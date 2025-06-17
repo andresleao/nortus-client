@@ -10,7 +10,7 @@ export default function IndicatorsSection() {
     if (!kpis) return null;
 
     return (
-        <div className="flex flex-col gap-6 ml-[40px]">
+        <div className="flex flex-col gap-6 ml-[40px] items-center 2xl:items-start mt-6 2xl:mt-0">
             <div className="flex gap-6">
                 <IndicatorCard
                     type={"arpu"}

@@ -10,7 +10,7 @@ export default function ActiveOffersSection() {
     if (!offers) return null;
 
     return (
-        <CustomContainer width="w-[852px]" margin="mt-[40px]">
+        <CustomContainer width="2xl:w-[852px] w-[700px]" margin="mt-[40px]">
             <div className="flex justify-between px-6 pt-[40px] mb-[32px]">
                 <span className="font-bold text-[20px] leading-[32px]">
                     Ranking de ofertas ativas
