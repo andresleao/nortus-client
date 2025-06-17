@@ -63,7 +63,7 @@ export default function ExpansionScoreBar({ label, scorePercentual }: ScoreBarPr
   };
 
   return (
-    <div className="bg-white/5 rounded-[16px] p-4 min-h-[96px] flex flex-col justify-center w-[300px] 2xl:w-full 2xl:max-w-full">
+    <div className="bg-white/5 rounded-[16px] p-4 min-h-[96px] flex flex-col justify-center w-full max-w-[300px] 2xl:max-w-full">
       <div className="flex items-center justify-between gap-x-4 mb-4 flex-wrap">
         <span className="text-sm md:text-base font-normal leading-[16px]">
           {label}
@@ -76,7 +76,7 @@ export default function ExpansionScoreBar({ label, scorePercentual }: ScoreBarPr
         </span>
       </div>
       <div className="relative w-full max-w-full h-[10px]">
-        <div className="absolute left-0 h-full bg-white/10 rounded-[16px] z-0 w-[266px] 2xl:max-w-full" />
+        <div className="absolute left-0 h-full bg-white/10 rounded-[16px] z-0" />
         <div
           className="relative h-full z-10"
           style={{ filter: `drop-shadow(0 0 4px ${barColor})` }}

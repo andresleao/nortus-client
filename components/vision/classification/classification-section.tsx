@@ -13,12 +13,12 @@ export default function ClassificationSection() {
         Classificação inteligente
       </span>
 
-      <div className="mt-6 flex flex-col md:flex-row gap-6 w-full">
-        <div className="w-full md:max-w-[320px]">
+      <div className="mt-6 flex">
+        <div className="w-full">
           <RadialChartDisplay />
         </div>
 
-        <div className="flex flex-col  gap-6 ">
+        <div className="flex flex-col w-full gap-6">
           <ExpansionScoreBar
             label="Score de expansão"
             scorePercentual={95}
