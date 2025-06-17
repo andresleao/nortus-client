@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux';
 import { getClient, login } from '@/api/api';
 import { setUser } from '@/components/provider/slices/auth-slice';
 import { setClient } from '../provider/slices/vision-page-slice';
+import Cookies from 'js-cookie';
 
 export default function HomeClient() {
     const dispatch = useDispatch();
@@ -19,8 +20,18 @@ export default function HomeClient() {
         const fetchData = async () => {
             setIsLoading(true);
 
+            localStorage.removeItem('user');
+
             const data = await login();
             const client = await getClient();
+
+            Cookies.set('token', data.token, {
+                expires: 7,
+                secure: true,
+                sameSite: 'strict',
+            });
+
+            localStorage.setItem('user', JSON.stringify(data.user));
 
             setIsLoading(false);
 
