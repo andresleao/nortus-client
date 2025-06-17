@@ -45,9 +45,9 @@ export default function DashboardClient() {
     }
 
     return (
-        <div className="mt-[--header-height] pt-[47px] flex flex-col items-center w-full mb-[40px]">
-            <div className="flex">
-                <div className="flex flex-col">
+        <div className="mt-[--header-height] pt-[47px] flex flex-col items-center w-full mb-[40px] m-auto ml-[48px]">
+            <div className="flex flex-col 2xl:flex-row">
+                <div className="flex flex-col items-center 2xl:items-start">
                     <KpiSection />
                     <ActiveOffersSection />
                 </div>

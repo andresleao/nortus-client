@@ -4,7 +4,7 @@ import WorkflowsCard from "./workflows-card";
 
 export default function ActiveWorkflowsSection() {
     return (
-        <CustomContainer padding="p-[40px]">
+        <CustomContainer padding="p-[40px]" width="w-[478px]">
             <span className="font-bold text-[20px] leading-[32px]">
                 Workflows inteligentes Ativos
             </span>
