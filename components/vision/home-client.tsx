@@ -35,15 +35,15 @@ export default function HomeClient() {
     }
 
     return (
-        <div className="mt-[--header-height] pt-[47px] mb-[40px] w-full 2lx:ml-0 px-6">
+        <div className="mt-[--header-height] pt-[47px] mb-[40px] w-full 2lx:ml-0 px-6 pb-6">
             <div className="flex flex-col 2xl:flex-row items-center 2xl:items-start gap-6 2xl:gap-o">
                 <UserSection />
                 <div className="flex flex-col lg:ml-6 w-full">
-                    <div className="flex flex-col 2xl:flex-row gap-x-6 mb-[40px] items-center">
+                    <div className="flex flex-col xxl-row gap-x-6 mb-[40px] items-center justify-center">
                         <IaSugestionSection />
                         <SimulationCardsSection />
                     </div>
-                    <div className="flex justify-center 2xl:justify-start">
+                    <div className="flex justify-center">
                         <ClassificationSection />
                     </div>
                 </div>
