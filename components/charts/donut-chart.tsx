@@ -57,7 +57,7 @@ export default function DonutChart({ segments }: DonutChartProps) {
                 },
             },
         },
-    }), []);
+    }), [donutLabels]);
 
     return (
         <div className="flex flex-col items-center gap-4">

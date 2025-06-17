@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'Gráficos inteligentes.',
 };
 
-export const montserrat = Montserrat({
+const montserrat = Montserrat({
   subsets: ['latin'],
   weight: ['400', '600', '700'],
   variable: '--font-montserrat',

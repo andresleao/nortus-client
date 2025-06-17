@@ -1,5 +1,3 @@
-import clsx from "clsx"
-
 type IndicatorProps = {
     color?: string,
 }
