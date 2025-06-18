@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "deploy": "gh-pages -d out -b gh-pages"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d out -b gh-pages",
+    "deploy:full": "npm run build && npm run deploy"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
