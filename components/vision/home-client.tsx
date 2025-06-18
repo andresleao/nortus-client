@@ -1,4 +1,5 @@
 'use client';
+export const dynamic = "force-static";
 
 import ClassificationSection from '@/components/vision/classification/classification-section';
 import IaSugestionSection from '@/components/vision/ia-suggestion/ia-sugestion-section';

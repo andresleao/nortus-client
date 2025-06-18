@@ -1,4 +1,5 @@
 'use client';
+export const dynamic = "force-static";
 
 import { getKpis, getOffers, getSegments } from "@/api/api";
 import ActiveOffersSection from "@/components/dashboard/active-offers-section";
